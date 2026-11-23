@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mate Salvaje | Domina Física y Matemáticas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#087BBD',
+                        brandDark: '#10243B',
+                        brandYellow: '#FFE45C',
+                        brandLight: '#F4FAFF',
+                        whatsapp: '#25D366'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-brandLight text-slate-800 font-sans antialiased">
+
+    <!-- HEADER / NAV -->
+    <header class="bg-brandDark/90 backdrop-blur-md text-white sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl sm:text-3xl font-black tracking-tight flex items-center gap-2 group">
+                <span class="text-brandYellow group-hover:scale-105 transition transform">Mate</span>
+                <span class="text-white">Salvaje</span>
+            </a>
+            <nav class="hidden md:flex gap-6 font-semibold text-sm">
+                <a href="#inicio" class="hover:text-brandYellow transition">Inicio</a>
+                <a href="#cursos" class="hover:text-brandYellow transition">Cursos</a>
+                <a href="#precios" class="hover:text-brandYellow transition">Precios</a>
+            </nav>
+            <a href="https://wa.me/51992237059?text=Hola%20Valentin,%20quiero%20informacion%20sobre%20las%20clases" 
+                target="_blank" 
+                class="bg-whatsapp hover:bg-emerald-600 text-white font-extrabold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition transform hover:scale-105">
+                <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="bg-gradient-to-b from-brandDark via-slate-900 to-brandPrimary text-white py-12 md:py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="bg-brandYellow text-brandDark text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">Saca 20 en todo</span>
+                <h1 class="text-3xl md:text-5xl font-black leading-tight">
+                    DOMINA FÍSICA y MATEMÁTICAS
+                    <span class="block text-brandYellow mt-1">CLASES VIRTUALES INTERACTIVAS</span>
+                </h1>
+                <p class="mt-4 text-slate-200 text-base md:text-lg font-medium">
+                    Método Dinámico con Pizarra Digital e IA. Aprende a razonar sin memorizar fórmulas.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4 items-center">
+                    <a href="https://wa.me/51992237059?text=Hola%20Valentin,%20quiero%20las%203%20clases%20GRATIS" 
+                        target="_blank" 
+                        class="bg-whatsapp hover:bg-emerald-600 text-white font-extrabold text-lg px-8 py-3.5 rounded-full shadow-xl flex items-center gap-3 transition transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-2xl"></i> WhatsApp
+                    </a>
+                    <button id="btn-ver-video" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-6 py-3.5 rounded-full flex items-center gap-2 transition">
+                        <i class="fa-solid fa-circle-play text-brandYellow text-xl"></i> Ver Video
+                    </button>
+                </div>
+                <div class="mt-6 flex items-center gap-3 text-xs text-slate-300">
+                    <div class="flex -space-x-2" id="hero-avatars">
+                        <!-- Inyectado dinámicamente por renderHeroAvatars() -->
+                    </div>
+                    <span>Confianza de más de <strong class="text-white" id="stat-hero-students">500</strong> padres felices</span>
+                </div>
+            </div>
+            <div class="relative text-center">
+                <img src="assets/img/hero/hero-banner10.webp" alt="Estudiantes Mate Salvaje" class="rounded-2xl shadow-2xl mx-auto max-w-full h-auto border-slate-2 border-white/10 hero-img-fade">
+            </div>
+        </div>
+    </section>
+
+    <!-- MATERIAS GRID -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-left mb-10">
+            <span class="text-brandPrimary text-xs font-bold uppercase tracking-widest">Aprende Mate</span>
+            <h2 class="text-3xl font-black text-brandDark mt-1">Explora un Mundo de Posibilidades</h2>
+        </div>
+        <div id="materias-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- Renderizado por JS -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN ¿POR QUÉ NOSOTROS? + MÉTRICAS -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+    
+        <!-- CONTENEDOR PRINCIPAL: GRID DE 2 COLUMNAS EN DESKTOP -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center mb-16">
+            
+            <!-- COLUMNA TEXTO Y PILARES (En móvil va PRIMERO: order-1 | En laptop va a la DERECHA: lg:order-2) -->
+            <div class="lg:col-span-7 order-1 lg:order-2 text-left">
+            <div class="mb-8">
+                <span class="text-brandPrimary text-xs font-bold uppercase tracking-widest">¿Por qué nosotros?</span>
+                <h2 class="text-2xl md:text-3xl font-black text-brandDark mt-1 leading-snug">
+                Resultados reales, <span class="text-brandPrimary">descubre por qué nos recomiendan</span>
+                </h2>
+            </div>
+
+            <!-- Sub-Grilla de 4 Pilares (Renderizado dinámico por JS) -->
+            <div id="por-que-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <!-- JS inyecta aquí las tarjetas -->
+            </div>
+            </div>
+
+            <!-- COLUMNA MULTIMEDIA / IMAGEN (En móvil va SEGUNDO: order-2 | En laptop va a la IZQUIERDA: lg:order-1) -->
+            <div class="lg:col-span-5 order-2 lg:order-1 relative group">
+            <div class="relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-[#10243B]">
+                <!-- Cuando crees tu imagen la pones aquí -->
+                <img src="assets/img/nosotros/nosotros.webp" 
+                    alt="Clases Virtuales Interactivas Mate Salvaje" 
+                    class="w-full h-[380px] md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-[#10243B]/80 via-transparent to-transparent flex items-end p-6">
+                <div class="text-white text-left">
+                    <span class="bg-brandPrimary/90 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">Tecnología EdTech</span>
+                    <p class="font-bold text-sm md:text-base">Pizarra Digital & Guías Asistidas por IA</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+        <!-- BARRA INFERIOR DE MÉTRICAS SOCIALES / KPIS -->
+        <div class="pt-10 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <!-- AGREGADO: id="stat-students" -->
+                <span class="text-3xl md:text-4xl font-black text-brandDark tracking-tight" id="stat-students">+500</span>
+                <span class="text-xs md:text-sm text-slate-500 font-medium mt-1">Alumnos felices y nivelados</span>
+            </div>
+
+            <div class="flex flex-col items-center sm:border-x sm:border-slate-100 px-4">
+                <!-- AGREGADO: id="stat-satisfaction" -->
+                <span class="text-3xl md:text-4xl font-black text-brandPrimary tracking-tight" id="stat-satisfaction">98%</span>
+                <span class="text-xs md:text-sm text-slate-500 font-medium mt-1">Satisfacción de los padres</span>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <!-- AGREGADO: id="stat-experience" -->
+                <span class="text-3xl md:text-4xl font-black text-brandDark tracking-tight" id="stat-experience">+10</span>
+                <span class="text-xs md:text-sm text-slate-500 font-medium mt-1">Años de experiencia e impacto</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CURSOS DESTACADOS -->
+    <section id="cursos" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-left mb-10">
+            <span class="text-brandPrimary text-xs font-bold uppercase tracking-widest">Cursos Destacados</span>
+            <h2 class="text-2xl md:text-3xl font-black text-brandDark mt-1 mb-6 leading-snug">
+                Materias divertidas, <span class="text-brandPrimary"> Habilidades reales</span>
+            </h2>
+        </div>
+        <div id="cursos-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Renderizado por JS -->
+        </div>
+    </section>
+
+    <!-- HISTORIAS DE PADRES -->
+    <section class="bg-white py-16 px-4 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-10">
+                <span class="text-brandPrimary text-xs font-bold uppercase tracking-widest">Historias de Padres</span>
+                <h2 class="text-2xl md:text-3xl font-black text-brandDark mt-1 mb-6 leading-snug">
+                    Padres reales, <span class="text-brandPrimary"> Felicidad real</span>
+                </h2>
+            </div>
+            <div id="testimonios-padres" class="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-thin scroll-smooth">
+                <!-- Renderizado dinámico por JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORIAS DE EXALUMNOS -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="mb-10">
+            <span class="text-brandPrimary text-xs font-bold uppercase tracking-widest">Historias de Exalumnos</span>
+                <h2 class="text-2xl md:text-3xl font-black text-brandDark mt-1 mb-6 leading-snug">
+                    Exalumnos reales, <span class="text-brandPrimary"> Futuros reales</span>
+                </h2>
+        </div>
+        <div id="testimonios-exalumnos" class="flex items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-thin scroll-smooth">
+            <!-- Renderizado dinámico por JS -->
+        </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <footer id="precios" class="bg-brandDark text-white pt-16 pb-8 px-4">
+
+        <!-- FOOTER CTA: DOS COLUMNAS, FONDO AZUL UNIFORME -->
+        <div class="max-w-5xl mx-auto mb-12 overflow-hidden
+                    grid grid-cols-1 md:grid-cols-2 items-stretch
+                    rounded-3xl bg-[#087BBD] shadow-2xl">
+
+            <!-- COLUMNA IZQUIERDA: TEXTO Y BOTÓN -->
+            <div class="relative z-10 p-8 md:p-10 lg:p-12 flex flex-col items-start justify-center text-left">
+
+                <span class="text-white/85 text-xs font-bold uppercase tracking-wider block mb-2">
+                    Empieza hoy
+                </span>
+
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
+                    Mentes brillantes <br class="hidden sm:inline">
+                    empiezan aquí
+                </h2>
+
+                <p class="text-white/90 mb-6 font-medium text-sm md:text-base leading-relaxed">
+                    Solicita 3 clases demostrativas sin compromiso alguno...
+                </p>
+
+                <a href="https://wa.me/51992237059?text=Hola%20Valentin%2C%20quiero%20mis%203%20clases%20demostrativas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-white text-[#10243B]
+                            hover:bg-[#FFE45C]
+                            font-extrabold text-base md:text-lg
+                            px-7 py-3.5 rounded-full
+                            inline-flex items-center gap-3
+                            shadow-lg transition-all duration-300
+                            hover:scale-105 group">
+
+                    <i class="fab fa-whatsapp text-[#25D366] group-hover:text-[#10243B] text-2xl transition-colors"></i>
+                        <span>WhatsApp</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+
+            <!-- COLUMNA DERECHA: IMAGEN, MITAD EXACTA -->
+            <div class="relative min-h-[250px] md:min-h-[340px] overflow-hidden">
+
+                <img
+                    src="assets/img/footer/footerniña.webp"
+                    alt="Niña imaginando un futuro brillante con Mate Salvaje"
+                    class="absolute inset-0 w-full h-full object-cover object-[62%_center]"
+                >
+
+                <!-- Fusión suave con el fondo azul -->
+                <div class="absolute inset-0 bg-gradient-to-r from-[#087BBD]/70 via-[#087BBD]/20 to-transparent"> </div>
+
+            </div>
+        </div>
+
+        <!-- PARTE SUPERIOR DEL FOOTER: LOGO + MENÚ + REDES SOCIALES -->
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-800/80 pb-6">
+        
+            <!-- Logo MateSalvaje -->
+            <div class="font-bold text-xl md:text-2xl tracking-tight text-white">
+                Mate<span class="text-brandYellow">Salvaje</span>
+            </div>
+
+            <!-- Menú de Navegación Rápida -->
+            <div class="flex items-center gap-6 text-xs md:text-sm font-medium text-slate-300">
+                <a href="#inicio" class="hover:text-brandYellow transition-colors">Inicio</a>
+                <a href="#cursos" class="hover:text-brandYellow transition-colors">Cursos</a>
+                <a href="#precios" class="hover:text-brandYellow transition-colors">Precios</a>
+            </div>
+
+            <!-- Iconos de Redes Sociales (Renderizado Dinámico desde JS) -->
+            <div id="social-links" class="flex items-center gap-2.5">
+                <!-- JS inyectará aquí los botones desde APP_DATA.redesSociales -->
+            </div>
+        </div>
+
+        <!-- PARTE INFERIOR DEL FOOTER: COPYRIGHT Y CRÉDITO DE INGENIERÍA -->
+        <div class="max-w-6xl mx-auto pt-4 border-t border-slate-800/40 text-center text-[11px] md:text-xs text-slate-400 font-light">
+        © <span id="year-copy">2026</span> MateSalvaje. Todos los derechos reservados. Desarrollado con excelencia técnica.
+        </div>
+    </footer>
+
+    <!-- MODAL DE PRECIOS -->
+    <div id="modal-precios" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop">
+        <div id="modal-precios-content" class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl modal-content">
+            <!-- Contenido dinámico desde main.js -->
+        </div>
+    </div>
+
+    <!-- MODAL DE VIDEO -->
+    <div id="modal-video" 
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        onclick="closeModalVideo()"> <!-- Cierra si hacen clic fuera del video -->
+    
+        <div class="bg-black rounded-2xl max-w-2xl w-full p-2 relative shadow-2xl" 
+            onclick="event.stopPropagation()"> <!-- Evita que al hacer clic dentro del video se cierre -->
+            
+            <!-- Botón de Cierre (X) -->
+            <button onclick="closeModalVideo()" 
+                    class="absolute -top-10 right-0 text-white hover:text-amber-400 text-3xl font-bold transition-colors cursor-pointer">
+            &times;
+            </button>
+
+            <!-- Reproductor -->
+            <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden">
+            <iframe id="video-iframe" 
+                    class="w-full h-full" 
+                    src="" 
+                    title="Demo Mate Salvaje" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Carga de módulos JS -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
